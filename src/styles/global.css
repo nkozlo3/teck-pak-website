@@ -1,0 +1,105 @@
+:root {
+	--padding-horizontal: 1.5rem;
+
+	--color-primary: #0f172a;
+	--color-secondary: #adafb3;
+	--color-accent: #38923f;
+	--color-text: #1f2937;
+	--color-muted: #6b7280;
+	/* --color-muted-bg: #e5e7eb */
+
+	--font-size-xl: clamp(1.5rem, 4vw, 3.5rem);
+	--font-size-lg: clamp(0.85rem, 1.5vw, 1.125rem);
+
+	--font-line-height-lg: 1.6;
+	--weightier-font: 500;
+}
+
+/* ==== Base Container ==== */
+.hero_container {
+	max-width: min(85vw, 1100px);
+	;
+	margin: 0 auto;
+	padding: 4rem var(--padding-horizontal);
+}
+
+/* ==== Layout ==== */
+.hero {
+	background: #ffffff;
+}
+
+/* ==== Content ==== */
+.hero_content {
+	max-width: 1100px;
+}
+
+/* ==== Typography ==== */
+.hero_title {
+	font-size: var(--font-size-xl);
+	line-height: 1.2;
+	font-weight: 700;
+	color: var(--color-primary);
+	margin-bottom: 1.25rem;
+}
+
+.hero_subtitle {
+	font-size: var(--font-size-lg);
+	color: var(--color-muted);
+	margin-bottom: 1.5rem;
+	max-width: 70ch;
+	font-weight: var(--weightier-font);
+}
+
+
+/* ==== Proof ==== */
+.hero_proof {
+	margin-bottom: 2rem;
+	padding-left: 1.25rem;
+}
+
+.hero_proof li {
+	margin-bottom: 0.5rem;
+	color: var(--color-text);
+}
+
+
+/* ==== CTA ==== */
+.cta_buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.75em 1.5em;
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: 6px;
+	font-size: var(--font-size-lg);
+}
+
+.btn--primary {
+	background-color: var(--color-accent);
+	color: white;
+}
+
+.btn--secondary {
+	background-color: var(--color-secondary);
+	color: var(--color-text);
+}
+
+/* ==== Responsive ==== */
+@media (min-width: 768px) {
+	.hero_container {
+		max-width: min(65vw, 1100px);
+		/* If layout is breaking on different screens this margin manual nudge may be the cause!! */
+		margin: 0 0 0 5rem;
+		padding: 6rem var(--padding-horizontal);
+	}
+
+	.hero_subtitle {
+		line-height: var(--font-line-height-lg);
+		max-width: 80ch;
+	}
+}
