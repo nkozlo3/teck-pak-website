@@ -1,3 +1,7 @@
+body {
+	box-sizing: border-box;
+}
+
 :root {
 	--padding-horizontal: 1.5rem;
 
@@ -8,17 +12,141 @@
 	--color-muted: #6b7280;
 	/* --color-muted-bg: #e5e7eb */
 
-	--font-size-xl: clamp(1.5rem, 4vw, 3.5rem);
+	--font-size-xl: clamp(1.5rem, 8vw, 3.5rem);
 	--font-size-lg: clamp(0.85rem, 1.5vw, 1.125rem);
 
 	--font-line-height-lg: 1.6;
 	--weightier-font: 500;
 }
 
+/* ==== Header Container ==== */
+.navbar {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	background: white;
+	z-index: 1000;
+	/* border-bottom: 1px solid #e5e7eb; */
+}
+
+.navbar_container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem var(--padding-horizontal);
+}
+
+/* ==== Logo ==== */
+.navbar_logo {
+	font-weight: 600;
+	font-size: 2rem;
+	color: var(--color-accent);
+	text-decoration: none;
+}
+
+.navbar_logo_teck {
+	color: #ffffff;
+}
+
+/* ==== Hamburger ==== */
+.navbar_toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3px;
+	z-index: 1001;
+	padding: 0.5rem;
+}
+
+.navbar_toggle.open .hamburger {
+	background: transparent;
+}
+
+.navbar_toggle.open .hamburger::before {
+	top: 0;
+	background: white;
+	transform: rotate(45deg);
+}
+
+.navbar_toggle.open .hamburger::after {
+	top: 0;
+	background: white;
+	transform: rotate(-45deg);
+}
+
+.hamburger {
+	width: 24px;
+	height: 2px;
+	background: var(--color-primary);
+	/*Elements rely on this. If .hamburger stops being relative layout will break*/
+	position: relative;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 24px;
+	height: 2px;
+	background: var(--color-primary);
+	transition: all 0.3s ease;
+}
+
+.hamburger::before {
+	top: -7px;
+}
+
+.hamburger::after {
+	top: 7px;
+}
+
+/* ==== Mobile Menu ==== */
+.navbar_links {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 100%;
+	height: 100vh;
+	background: var(--color-primary);
+	padding: 2rem 0;
+	transition: right 0.3s ease;
+	z-index: 999;
+}
+
+.navbar_links.open {
+	right: 0;
+}
+
+.navbar_links ul {
+	list-style: none;
+	padding: 0 0 0 2rem;
+	margin-top: 2rem;
+}
+
+.navbar_links li {
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid var(--color-text);
+	padding-bottom: 1rem;
+}
+
+.navbar_links a {
+	color: var(--color-muted);
+}
+
+.navbar_links a:hover {
+	color: var(--color-secondary);
+}
+
+
 /* ==== Base Container ==== */
 .hero_container {
 	max-width: min(85vw, 1100px);
-	;
 	margin: 0 auto;
 	padding: 4rem var(--padding-horizontal);
 }
@@ -89,8 +217,49 @@
 	color: var(--color-text);
 }
 
-/* ==== Responsive ==== */
+/* ==== non-mobile ==== */
 @media (min-width: 768px) {
+	.navbar_toggle {
+		display: none;
+	}
+
+	.navbar_links {
+		position: static;
+		height: auto;
+		width: auto;
+		background: transparent;
+		transition: none;
+	}
+
+	.navbar_links ul {
+		display: flex;
+		gap: 2.5rem;
+		margin: 0;
+		align-items: center;
+	}
+
+	.navbar_links li {
+		margin-bottom: 0;
+		border: none;
+		padding: 0;
+	}
+
+	.navbar_links a {
+		text-decoration: none;
+		color: white;
+	}
+
+	.deskt-btn {
+		display: inline-block;
+		padding: 0.75em 1.5em;
+		font-weight: 600;
+		text-decoration: none;
+		border-radius: 6px;
+		font-size: var(--font-size-lg);
+		background-color: var(--color-accent);
+		color: white;
+	}
+
 	.hero_container {
 		max-width: min(65vw, 1100px);
 		/* If layout is breaking on different screens this margin manual nudge may be the cause!! */

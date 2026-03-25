@@ -1,0 +1,47 @@
+---
+
+---
+
+<header class="navbar">
+	<div class="navbar_container">
+		<!-- Logo! -->
+		<a href="/" class="navbar_logo">
+			<span class="navbar_logo_teck">Teck</span>Pac</a
+		>
+
+		<!-- Hamburger -->
+		<button
+			id="navbar-toggle"
+			class="navbar_toggle"
+			aria-label="Open Menu"
+			aria-expanded="false"
+		>
+			<span class="hamburger"></span>
+		</button>
+
+		<!-- Navigation Links -->
+		<nav id="navbar-links" class="navbar_links">
+			<ul>
+				<li><a href="/solutions" class="navbar_link">Solutions</a></li>
+				<li>
+					<a href="/caseStudies" class="navbar_link">Case Studies</a>
+				</li>
+				<li><a href="/training" class="navbar_link">Training</a></li>
+				<li><a href="/resources" class="navbar_link">Resources</a></li>
+				<li><a href="/about" class="navbar_link">About</a></li>
+				<li><a href="/contact" class="navbar_link deskt-btn">Contact Us</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const toggle = document.getElementById("navbar-toggle");
+	const menu = document.getElementById("navbar-links");
+
+	toggle?.addEventListener("click", () => {
+		const isOpen = menu?.classList.toggle("open");
+		toggle.classList.toggle("open");
+		toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+	});
+</script>
