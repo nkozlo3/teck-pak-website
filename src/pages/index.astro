@@ -1,6 +1,7 @@
 ---
 import Hero from "../components/sections/Hero.astro";
 import Header from "../components/layout/Header.astro";
+import HeroSubFooter from "../components/sections/HeroSubFooter.astro";
 import "../styles/global.css";
 ---
 
@@ -14,7 +15,10 @@ import "../styles/global.css";
 		<title>Teck-Pac Website</title>
 	</head>
 	<body>
-		<Header />
-		<Hero />
+		<div class="navbar_hero_image">
+			<Header />
+			<Hero />
+		</div>
+		<HeroSubFooter />
 	</body>
 </html>

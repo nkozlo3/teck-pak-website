@@ -1,5 +1,13 @@
 body {
 	box-sizing: border-box;
+	margin: 0;
+}
+
+html,
+body {
+	/*necessary to prevent scrollability left->right and right->left*/
+	width: 100%;
+	overflow-x: hidden;
 }
 
 :root {
@@ -8,15 +16,26 @@ body {
 	--color-primary: #0f172a;
 	--color-secondary: #adafb3;
 	--color-accent: #38923f;
-	--color-text: #1f2937;
-	--color-muted: #6b7280;
-	/* --color-muted-bg: #e5e7eb */
+	--color-text-default: white;
+	--color-text-secondary: #1f2937;
+	--color-muted: #e4e0e0;
 
-	--font-size-xl: clamp(1.5rem, 8vw, 3.5rem);
-	--font-size-lg: clamp(0.85rem, 1.5vw, 1.125rem);
+	--font-size-xl: clamp(1.5rem, 8vw, 3rem);
+	--font-size-lg: clamp(0.75rem, 2.5vw, 2rem);
+	--font-size-med: clamp(0.85rem, 1.5vw, 1.125rem);
 
 	--font-line-height-lg: 1.6;
-	--weightier-font: 500;
+	--weight-font: 500;
+	--weightier-font: 600;
+	--title-weight: 700;
+
+	--text-shadow: 0px 0px 3px #000;
+}
+
+/* ==== Hero Page Image one ==== */
+.navbar_hero_image {
+	background-image: url(../../public/hero_section_tempImage_opt1.jpg);
+	background-size: cover;
 }
 
 /* ==== Header Container ==== */
@@ -24,9 +43,7 @@ body {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	background: white;
 	z-index: 1000;
-	/* border-bottom: 1px solid #e5e7eb; */
 }
 
 .navbar_container {
@@ -38,10 +55,11 @@ body {
 
 /* ==== Logo ==== */
 .navbar_logo {
-	font-weight: 600;
+	font-weight: var(--weightier-font);
 	font-size: 2rem;
 	color: var(--color-accent);
 	text-decoration: none;
+	text-shadow: var(--text-shadow);
 }
 
 .navbar_logo_teck {
@@ -131,7 +149,7 @@ body {
 
 .navbar_links li {
 	margin-bottom: 1.5rem;
-	border-bottom: 1px solid var(--color-text);
+	border-bottom: 1px solid var(--color-text-secondary);
 	padding-bottom: 1rem;
 }
 
@@ -148,13 +166,9 @@ body {
 .hero_container {
 	max-width: min(85vw, 1100px);
 	margin: 0 auto;
-	padding: 4rem var(--padding-horizontal);
+	padding: 1rem var(--padding-horizontal);
 }
 
-/* ==== Layout ==== */
-.hero {
-	background: #ffffff;
-}
 
 /* ==== Content ==== */
 .hero_content {
@@ -165,31 +179,20 @@ body {
 .hero_title {
 	font-size: var(--font-size-xl);
 	line-height: 1.2;
-	font-weight: 700;
-	color: var(--color-primary);
+	font-weight: var(--title-weight);
+	color: var(--color-text-default);
 	margin-bottom: 1.25rem;
+	text-shadow: var(--text-shadow);
 }
 
 .hero_subtitle {
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-med);
 	color: var(--color-muted);
 	margin-bottom: 1.5rem;
 	max-width: 70ch;
 	font-weight: var(--weightier-font);
+	text-shadow: var(--text-shadow);
 }
-
-
-/* ==== Proof ==== */
-.hero_proof {
-	margin-bottom: 2rem;
-	padding-left: 1.25rem;
-}
-
-.hero_proof li {
-	margin-bottom: 0.5rem;
-	color: var(--color-text);
-}
-
 
 /* ==== CTA ==== */
 .cta_buttons {
@@ -201,10 +204,10 @@ body {
 .btn {
 	display: inline-block;
 	padding: 0.75em 1.5em;
-	font-weight: 600;
+	font-weight: var(--weightier-font);
 	text-decoration: none;
 	border-radius: 6px;
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-med);
 }
 
 .btn--primary {
@@ -214,11 +217,36 @@ body {
 
 .btn--secondary {
 	background-color: var(--color-secondary);
-	color: var(--color-text);
+	color: var(--color-text-secondary);
 }
 
-/* ==== non-mobile ==== */
-@media (min-width: 768px) {
+/* ==== Hero Sub Footer ==== */
+.hero_sub_footer_container {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	padding: 1rem;
+	justify-content: center;
+	background: var(--color-muted);
+}
+
+.hero_sub_footer_item {
+	font-size: var(--font-size-lg);
+	font-weight: var(--weightier-font);
+	color: var(--color-text-secondary);
+	/* border-bottom: 1px solid var(--color-text-secondary); */
+
+}
+
+.hero_sub_footer_container p:not(:last-child) {
+	padding-right: 1em;
+	border-right: 1px solid var(--color-text-secondary);
+
+}
+
+
+/* ==== non-mobile, non-tablet ==== */
+@media (min-width: 804px) {
 	.navbar_toggle {
 		display: none;
 	}
@@ -247,15 +275,16 @@ body {
 	.navbar_links a {
 		text-decoration: none;
 		color: white;
+		text-shadow: var(--text-shadow);
 	}
 
 	.deskt-btn {
 		display: inline-block;
 		padding: 0.75em 1.5em;
-		font-weight: 600;
+		font-weight: var(--weightier-font);
 		text-decoration: none;
 		border-radius: 6px;
-		font-size: var(--font-size-lg);
+		font-size: var(--font-size-med);
 		background-color: var(--color-accent);
 		color: white;
 	}
@@ -264,7 +293,7 @@ body {
 		max-width: min(65vw, 1100px);
 		/* If layout is breaking on different screens this margin manual nudge may be the cause!! */
 		margin: 0 0 0 5rem;
-		padding: 6rem var(--padding-horizontal);
+		padding: 2rem var(--padding-horizontal);
 	}
 
 	.hero_subtitle {
