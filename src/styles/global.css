@@ -8,6 +8,7 @@ body {
 	/*necessary to prevent scrollability left->right and right->left*/
 	width: 100%;
 	overflow-x: clip;
+	scroll-behavior: smooth;
 }
 
 :root {
