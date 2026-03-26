@@ -7,7 +7,7 @@ html,
 body {
 	/*necessary to prevent scrollability left->right and right->left*/
 	width: 100%;
-	overflow-x: hidden;
+	overflow-x: clip;
 }
 
 :root {
@@ -18,7 +18,7 @@ body {
 	--color-accent: #38923f;
 	--color-text-default: white;
 	--color-text-secondary: #1f2937;
-	--color-muted: #e4e0e0;
+	--color-muted: oklch(90.983% 0.00433 15.923);
 
 	--font-size-xl: clamp(1.5rem, 8vw, 3rem);
 	--font-size-lg: clamp(0.75rem, 2.5vw, 2rem);
@@ -40,7 +40,7 @@ body {
 
 /* ==== Header Container ==== */
 .navbar {
-	position: sticky;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 1000;
@@ -51,6 +51,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem var(--padding-horizontal);
+	background: rgba(0, 0, 0, 0.5);
 }
 
 /* ==== Logo ==== */
@@ -167,6 +168,7 @@ body {
 	max-width: min(85vw, 1100px);
 	margin: 0 auto;
 	padding: 1rem var(--padding-horizontal);
+	padding-top: 5rem;
 }
 
 
@@ -215,9 +217,17 @@ body {
 	color: white;
 }
 
+.btn--primary:hover {
+	color: var(--color-secondary);
+}
+
 .btn--secondary {
 	background-color: var(--color-secondary);
 	color: var(--color-text-secondary);
+}
+
+.btn--secondary:hover {
+	color: white;
 }
 
 /* ==== Hero Sub Footer ==== */
@@ -225,17 +235,15 @@ body {
 	display: flex;
 	flex-direction: row;
 	gap: 1rem;
-	padding: 1rem;
 	justify-content: center;
 	background: var(--color-muted);
 }
 
 .hero_sub_footer_item {
+	text-align: center;
 	font-size: var(--font-size-lg);
 	font-weight: var(--weightier-font);
 	color: var(--color-text-secondary);
-	/* border-bottom: 1px solid var(--color-text-secondary); */
-
 }
 
 .hero_sub_footer_container p:not(:last-child) {
@@ -244,9 +252,82 @@ body {
 
 }
 
+.hero_about_title {
+	text-align: center;
+	font-size: clamp(1.5rem, 4vw, 3rem);
+	font-weight: var(--weightier-font);
+	color: var(--color-primary);
+}
+
+
+.card_grid {
+	max-width: min(85vw, 1500px);
+	margin: 0 auto;
+	padding: 1rem 1rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.card {
+	background: white;
+	border-radius: 1rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card_link {
+	display: flex;
+	flex-direction: column;
+	padding: 1.75rem;
+	text-decoration: none;
+	color: blueviolet;
+	height: 100%;
+	text-align: center;
+}
+
+.card_link:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 4px;
+}
+
+.card_title {
+	font-size: 1.25rem;
+	font-weight: var(--weightier-font);
+	margin-bottom: 0.5rem;
+	color: var(--color-primary);
+}
+
+.card_description {
+	font-size: .95rem;
+	line-height: 1.5;
+	color: #555;
+	margin-bottom: 1rem;
+}
+
+.card_cta {
+	font-size: 0.9rem;
+	font-weight: var(--weight-font);
+	color: var(--color-accent);
+}
 
 /* ==== non-mobile, non-tablet ==== */
 @media (min-width: 804px) {
+	.navbar_container {
+		padding: 0 var(--padding-horizontal);
+	}
+
 	.navbar_toggle {
 		display: none;
 	}
@@ -294,10 +375,16 @@ body {
 		/* If layout is breaking on different screens this margin manual nudge may be the cause!! */
 		margin: 0 0 0 5rem;
 		padding: 2rem var(--padding-horizontal);
+		padding-top: 7rem;
+		padding-bottom: clamp(2rem, 8vh, 7rem);
 	}
 
 	.hero_subtitle {
 		line-height: var(--font-line-height-lg);
 		max-width: 80ch;
+	}
+
+	.hero_sub_footer_container {
+		gap: 2rem;
 	}
 }

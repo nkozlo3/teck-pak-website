@@ -1,0 +1,28 @@
+---
+import CardGrid from "../props/CardGrid.astro";
+
+const services = [
+	{
+		title: "Concept to Commercialization",
+		description:
+			"From concept to commercialization with minimized capital expenditure.",
+		href: "/services",
+	},
+	{
+		title: "Packaging Case Studies",
+		description:
+			"Conduct investigations to identify root causes of packaging malfunctions.",
+		href: "/caseStudies",
+	},
+	{
+		title: "Closures Training Course",
+		description: "The most comprehensive closure training in the industry.",
+		href: "/services",
+	},
+];
+---
+
+<section class="hero_about">
+	<h2 class="hero_about_title">Our Services</h2>
+	<CardGrid items={services} />
+</section>

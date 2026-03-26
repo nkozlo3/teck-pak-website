@@ -1,0 +1,25 @@
+---
+const { items = [] } = Astro.props;
+interface CardItem {
+	id: string;
+	title: string;
+	description: string;
+	href: string;
+}
+---
+
+<section class="card_grid">
+	<ul class="grid">
+		{
+			items.map((item: CardItem) => (
+				<li class="card">
+					<a href={item.href} class="card_link">
+						<h3 class="card_title">{item.title}</h3>
+						<p class="card_description">{item.description}</p>
+						<span class="card_cta">Learn more &#10148</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>
