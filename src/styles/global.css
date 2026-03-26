@@ -253,7 +253,7 @@ body {
 
 }
 
-.hero_about_title {
+.base_title {
 	text-align: center;
 	font-size: clamp(1.5rem, 4vw, 3rem);
 	font-weight: var(--weightier-font);
@@ -264,7 +264,7 @@ body {
 .card_grid {
 	max-width: min(85vw, 1500px);
 	margin: 0 auto;
-	padding: 1rem 1rem;
+	padding: 0 1rem;
 }
 
 .grid {
@@ -293,8 +293,6 @@ body {
 	flex-direction: column;
 	padding: 1.75rem;
 	text-decoration: none;
-	color: blueviolet;
-	height: 100%;
 	text-align: center;
 }
 
