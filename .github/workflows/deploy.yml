@@ -22,9 +22,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+          node-version: 22.12.0
+          cache: npm
+      - run: node -v # TESTING HERE
+    #   - name: Install, build, and upload your site
+    #     uses: withastro/action@v3
+
+      - run: npm install
+      - run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
       # Optional: Add any public environment variables needed during the build
       # env:
         # PUBLIC_VAR: ${{ secrets.PUBLIC_VAR }}
