@@ -1,0 +1,30 @@
+---
+const { items = [] } = Astro.props;
+
+interface InfoPageItem {
+	title: string;
+	page_content: string[];
+}
+---
+
+<section id="info_page" class="info_page">
+	{
+		items.map((item: InfoPageItem) => (
+			<div class="info_page_container">
+				<div class="info_page_header">
+					<h2 class="base_title about_title info_title">
+						{item.title}
+					</h2>
+					<button class="info_page_back" onclick="history.back()">
+						<span class="info_page_hamburger" />
+					</button>
+				</div>
+				{item.page_content.map((content) => (
+					<div class="info_page_content">
+						<p class="info_page_paragraph">{content}</p>
+					</div>
+				))}
+			</div>
+		))
+	}
+</section>
