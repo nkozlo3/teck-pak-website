@@ -1,0 +1,85 @@
+:root {
+	--padding-horizontal: 1.5rem;
+
+	--color-primary: #0f172a;
+	--color-secondary: #adafb3;
+	--color-accent: #38923f;
+	--color-text-default: white;
+	--color-text-secondary: #1f2937;
+	--color-muted: oklch(90.983% 0.00433 15.923);
+
+	--font-size-xl: clamp(1.5rem, 8vw, 3rem);
+	--font-size-lg: clamp(0.75rem, 2.5vw, 2rem);
+	--font-size-med: clamp(0.85rem, 1.5vw, 1.125rem);
+
+	--font-line-height-lg: 1.6;
+	--weight-font: 500;
+	--weightier-font: 600;
+	--title-weight: 700;
+
+	--text-shadow: 0px 0px 3px #000;
+}
+
+.info_page_container {
+	padding: 1rem var(--padding-horizontal);
+}
+
+.info_page_header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.info_page_back {
+	position: absolute;
+	right: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	display: flex;
+
+	width: 24px;
+	height: 24px;
+	padding: 0;
+}
+
+.info_page_hamburger {
+	position: relative;
+	width: 24px;
+	height: 24px;
+}
+
+.info_page_hamburger::before,
+.info_page_hamburger::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	width: 100%;
+	height: 2px;
+	background: black;
+
+	transform-origin: center;
+}
+
+.info_page_hamburger::before {
+	transform: translateY(-50%) rotate(45deg);
+}
+
+.info_page_hamburger::after {
+	transform: translateY(-50%) rotate(-45deg);
+}
+
+
+
+.info_page_content p {
+	padding-bottom: 2rem;
+	text-align: center;
+	line-height: 1.5rem;
+
+	margin: 0 auto;
+	max-width: 80ch;
+}

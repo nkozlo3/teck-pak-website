@@ -1,0 +1,109 @@
+---
+const { items = [] } = Astro.props;
+interface FloatingPageItem {
+	title: string;
+	subtitle: string;
+	credibility_points_mobile?: string[];
+	description_mobile?: string;
+	description?: string;
+	subtitle_alt: string;
+	points?: string[];
+	image?: {
+		src: string;
+		alt: string;
+	};
+	image_points?: string[];
+	button_href: string;
+	number?: string;
+	email?: string;
+	address?: string;
+}
+---
+
+<section class="floating_page">
+	{
+		items.map((item: FloatingPageItem) => (
+			<div class="floating_page_container">
+				<div class="floating_page_primary">
+					<h2 class="floating_page_title base_title">{item.title}</h2>
+					<div class="floating_page_credibility_mobile">
+						<h3 class="floating_page_subtitle">{item.subtitle}</h3>
+						{item.credibility_points_mobile &&
+							item.credibility_points_mobile.length > 0 && (
+								<ul class="floating_page_points floating_page_points_mobile">
+									{item.credibility_points_mobile.map(
+										(point) => (
+											<li class="floating_page_points_item">
+												{point}
+											</li>
+										),
+									)}
+								</ul>
+							)}
+					</div>
+					<p class="floating_page_description_mobile">
+						{item.description_mobile}
+					</p>
+					<p class="floating_page_description">{item.description}</p>
+					<h3 class="floating_page_subtitle">{item.subtitle_alt}</h3>
+					{item.points && item.points.length > 0 && (
+						<ul class="floating_page_points">
+							{item.points.map((point) => (
+								<li class="floating_page_points_item">
+									{point}
+								</li>
+							))}
+						</ul>
+					)}
+					<div class="floating_page_footer_container">
+						<a
+							href={item.button_href}
+							class="floating_page_btn btn btn--primary"
+						>
+							Learn More
+						</a>
+						<div class="floating_page_footer_contact">
+							<a
+								href="tel:+19143144117"
+								class="floating_page_footer_contact_item"
+							>
+								{item.number}
+							</a>
+							<a
+								href="mailto:pdecleir@gmail.com"
+								class="floating_page_footer_contact_item"
+							>
+								{item.email}
+							</a>
+							<a
+								href="https://www.google.com/maps/place/Atlanta,+GA/@33.767357,-84.502779,12z/data=!3m1!4b1!4m6!3m5!1s0x88f5045d6993098d:0x66fede2f990b630b!8m2!3d33.7501275!4d-84.3885209!16zL20vMDEzeXE?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+								class="floating_page_footer_contact_item"
+							>
+								{item.address}
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="floating_page_secondary">
+					{item.image && (
+						<img
+							src={item.image.src}
+							alt={item.image.alt}
+							class="floating_page_image"
+							loading="lazy"
+						/>
+					)}
+					{item.image_points && item.image_points.length > 0 && (
+						<ul class="floating_page_points floating_page_image_points">
+							{item.image_points.map((point) => (
+								<li class="floating_page_points_item floating_page_points_item">
+									{point}
+								</li>
+							))}
+						</ul>
+					)}
+				</div>
+			</div>
+		))
+	}
+</section>
