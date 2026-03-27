@@ -24,7 +24,6 @@ jobs:
         with:
           node-version: 22.12.0
           cache: npm
-      - run: node -v # TESTING HERE
     #   - name: Install, build, and upload your site
     #     uses: withastro/action@v3
 
