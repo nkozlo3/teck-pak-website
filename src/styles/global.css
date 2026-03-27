@@ -35,7 +35,7 @@ body {
 
 /* ==== Hero Page Image one ==== */
 .navbar_hero_image {
-	background-image: url(../../public/hero_section_tempImage_opt1.jpg);
+	background-image: url(../../hero_section_tempImage_opt1.jpg);
 	background-size: cover;
 }
 
@@ -319,6 +319,10 @@ body {
 	font-size: 0.9rem;
 	font-weight: var(--weight-font);
 	color: var(--color-accent);
+}
+
+.about_title {
+	font-size: var(--font-size-xl);
 }
 
 /* ==== non-mobile, non-tablet ==== */

@@ -1,10 +1,47 @@
 ---
-
+import "../../styles/about.css";
+import FloatingPage from "../props/FloatingPage.astro";
+const pages = [
+	{
+		title: "Trusted Experience in Food & Beverage Packaging",
+		subtitle: "Piaras De Cleir, Founder",
+		description_mobile:
+			"With 25+ years of experience, dozens of successful case studies and product launches, we specialize in solving complex food and beverage packaging challenges. From defect analysis to rapid commercialization to comprehensive training TeckPac is ready to help.",
+		description:
+			"With 25+ years of experience, TeckPac brings technical expertise to all aspects of packaging. We’ve supported everything from launches to solving complex field failures, including carbonation loss, stress cracking, and sealing defects. Our approach goes beyond surface-level fixes to identify root causes and implement lasting solutions. In addition to troubleshooting and development, we offer comprehensive training programs covering everything from resin selection to closure performance. TeckPac helps teams move faster, reduce risk, and build packaging that performs in the real world.",
+		subtitle_alt: "Here's What We Do",
+		credibility_points_mobile: [
+			"25+ years of food & beverage packaging experience",
+			"35 U.S. patents in packaging",
+			"B.S. and M.S. degrees in Plastics Engineering",
+		],
+		points: [
+			"Diagnose & solve packaging defects and quality issues",
+			"Launch products from concept to commercialization with speed-to-market and minimized expenditure",
+			"Comprehensive training on closures, best practices, and more",
+		],
+		image: {
+			src: "../../../piaras_headshot.jpg",
+			alt: "Piaras Headshot",
+		},
+		image_points: [
+			"25+ years of food & beverage packaging experience",
+			"35 U.S. patents in packaging",
+			"B.S. and M.S. degrees in Plastics Engineering",
+			"MBA in Marketing Management",
+			"Board of Directors, SPE Blow Molding Division",
+		],
+		button_href: "/about",
+		number: "(914) 314-4117",
+		email: "pdecleir@gmail.com",
+		address: "Atlanta, GA",
+	},
+];
 ---
 
 <section id="about" class="about">
 	<div class="about_container">
-		<h2 class="about_title base_title">About Us</h2>
-		<p class="about_content">We are so freaking cool man</p>
+		<h2 class="base_title about_title">About TeckPac</h2>
+		<FloatingPage items={pages} />
 	</div>
 </section>
