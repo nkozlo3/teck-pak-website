@@ -1,7 +1,73 @@
 ---
 import "../styles/global.css";
 import "../styles/solutions.css";
+import "../styles/floatingPage.css";
 import Header from "../components/layout/Header.astro";
+import FloatingPage from "../components/props/FloatingPage.astro";
+
+const solutions = [
+	{
+		title: "Kool-Aid Liquid Concentrate Package Development",
+		description_mobile:
+			"Went from concept to commercialization in just five months for a new Kool-Aid package by combining elements of existing packages into a new unique package. Result: Speed to market and reduced capital expenditure by adapting existing assets.",
+		description:
+			"Went from concept to commercialization in just five months for a new Kool-Aid package by combining elements of existing packages into a new unique package. Result: Speed to market and reduced capital expenditure by adapting existing assets.",
+		subtitle_alt: "Overview",
+		points: [
+			"New Kool-Aid Package",
+			"Concept to Commercialization",
+			"Speed to Market",
+			"Minimized Capital Expenditure",
+			"MiO + Crystal Light = Kool-Aid!!",
+		],
+		image: {
+			src: "/teck-pak-website/cool_aid_launch.png",
+			alt: "MiO + Crystal Light = Kool-Aid!!",
+		},
+		image_loading: "eager",
+		button_href: "/teck-pak-website/solutions/kool-aid",
+	},
+	{
+		title: "Jell-O Egg Mold Concepts",
+		description_mobile:
+			"Worked through multiple technical and molding challenges to optimize various Easter Egg concepts under constrained timelines – addressed tolerance requirements to meet contrasting requirements such as a leak free fit and easy opening, resin requirements to handle boiling water, and molding challenges.",
+		description:
+			"Worked through multiple technical and molding challenges to optimize various Easter Egg concepts under constrained timelines – addressed tolerance requirements to meet contrasting requirements such as a leak free fit and easy opening, resin requirements to handle boiling water, and molding challenges.",
+		subtitle_alt: "Overview",
+		points: [
+			"Optimized Easter Egg concepts",
+			"Efficient technical challenges under constrained timelines",
+			"Addressing technical requirements to meet contrasting requirements",
+			"Awesome jello Easter Eggs!!",
+		],
+		image: {
+			src: "/teck-pak-website/jello_mold_eggs.jpg",
+			alt: "Two Jello Mold concepts for making Jello Easter Eggs",
+		},
+		image_loading: "eager",
+		button_href: "/teck-pak-website/solutions/jello-mold",
+	},
+	{
+		title: "Design and Launch of a new, improved K-Cup",
+		description_mobile:
+			"Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a “quick” production filler for regional launch, while commercial line was being produced.",
+		description:
+			"Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a “quick” production filler for regional launch, while commercial line was being produced.",
+		subtitle_alt: "Overview",
+		points: [
+			"Developed a New Coffee Pod",
+			"Improved filtration mechanism",
+			"Identified additional equipment supplier",
+			"Coffee!!",
+		],
+		image: {
+			src: "/teck-pak-website/coffee_pod.png",
+			alt: "Coffee pod packaging and coffee pods",
+		},
+		image_loading: "lazy",
+		button_href: "/teck-pak-website/solutions/coffee-pods",
+	},
+];
 ---
 
 <html lang="en">
@@ -12,5 +78,8 @@ import Header from "../components/layout/Header.astro";
 	</head>
 	<body>
 		<Header />
+		<div class="floating_page_wrapper">
+			<FloatingPage items={solutions} />
+		</div>
 	</body>
 </html>

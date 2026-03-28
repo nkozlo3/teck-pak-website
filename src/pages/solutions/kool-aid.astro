@@ -1,0 +1,25 @@
+---
+import "../../styles/infoPage.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+	{
+		title: "Kool Aid Launch",
+		page_content: [
+			"Went from concept to commercialization in just five months for a new Kool-Aid package by combining elements of existing packages into a new unique package. Result: Speed to market and reduced capital expenditure by adapting existing assets.",
+		],
+	},
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Kool-Aid | Teck-Pac</title>
+	</head>
+	<body>
+		<section id="solutions_kool-aid_page" class="solutions_kool-aid_page">
+			<InfoPage items={content} />
+		</section>
+	</body>
+</html>
