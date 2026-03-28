@@ -1,6 +1,9 @@
 .floating_page_wrapper {
+	display: flex;
+	flex-direction: row;
 	margin-top: 5rem;
 }
+
 
 @media (min-width: 804px) {
 	.floating_page_wrapper {

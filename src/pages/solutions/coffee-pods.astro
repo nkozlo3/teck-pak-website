@@ -1,0 +1,25 @@
+---
+import "../../styles/infoPage.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+	{
+		title: "Improved Coffee Pods",
+		page_content: [
+			'Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a "quick" production filler for regional launch, while commercial line was being produced.',
+		],
+	},
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Coffee-Pods | Teck-Pac</title>
+	</head>
+	<body>
+		<section id="solutions_coffe-pod_page" class="solutions_coffe-pod_page">
+			<InfoPage items={content} />
+		</section>
+	</body>
+</html>

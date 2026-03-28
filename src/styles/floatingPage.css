@@ -144,8 +144,9 @@
 	}
 
 	.floating_page_image {
-		padding: 2rem 0 0 3rem;
-		max-width: 350px;
+		padding: 2rem 1rem 1rem 3rem;
+		max-width: max-content;
+		margin: auto;
 		width: 90%;
 		height: auto;
 	}

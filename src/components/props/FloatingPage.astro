@@ -2,7 +2,7 @@
 const { items = [] } = Astro.props;
 interface FloatingPageItem {
 	title: string;
-	subtitle: string;
+	subtitle?: string;
 	credibility_points_mobile?: string[];
 	description_mobile?: string;
 	description?: string;
@@ -13,6 +13,7 @@ interface FloatingPageItem {
 		alt: string;
 	};
 	image_points?: string[];
+	image_loading?: "lazy";
 	button_href: string;
 	number?: string;
 	email?: string;
@@ -92,7 +93,7 @@ interface FloatingPageItem {
 							src={item.image.src}
 							alt={item.image.alt}
 							class="floating_page_image"
-							loading="lazy"
+							loading={item.image_loading}
 						/>
 					)}
 					{item.image_points && item.image_points.length > 0 && (
