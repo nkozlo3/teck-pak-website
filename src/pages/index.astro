@@ -5,27 +5,27 @@ import HeroSubFooter from "../components/sections/HeroSubFooter.astro";
 import HeroAbout from "../components/sections/HeroAbout.astro";
 import About from "../components/sections/About.astro";
 import Contact from "../components/sections/Contact.astro";
-import "../styles/global.css";
-import "../styles/floatingPage.css";
+import "/src/styles/global.css";
+import "/src/styles/floatingPage.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Teck-Pac</title>
-	</head>
-	<body>
-		<Header />
-		<div class="navbar_hero_image">
-			<Hero />
-		</div>
-		<HeroSubFooter />
-		<HeroAbout />
-		<About />
-		<Contact />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Teck-Pac</title>
+  </head>
+  <body>
+    <Header />
+    <div class="navbar_hero_image">
+      <Hero />
+    </div>
+    <HeroSubFooter />
+    <HeroAbout />
+    <About />
+    <Contact />
+  </body>
 </html>
