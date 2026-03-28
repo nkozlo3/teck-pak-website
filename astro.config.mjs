@@ -3,11 +3,14 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import netlify from '@astrojs/netlify';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nkozlo3@github.io',
-  base: '/teck-pak-website',
+  output: 'server',
+  adapter: netlify(),
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
 });

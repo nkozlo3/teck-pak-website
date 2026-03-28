@@ -1,26 +1,26 @@
 ---
-import "/src/styles/global.css";
-import "/src/styles/infoPage.css";
+import "../styles/global.css";
+import "../styles/infoPage.css";
 import InfoPage from "../../components/props/InfoPage.astro";
 const content = [
-	{
-		title: "Jello Mold Easter Eggs",
-		page_content: [
-			"Worked through multiple technical and molding challenges to optimize various Easter Egg concepts under constrained timelines - addressed tolerance requirements to meet contrasting requirements such as a leak free fit and easy opening, resin requirements to handle boiling water, and molding challenges.",
-		],
-	},
+  {
+    title: "Jello Mold Easter Eggs",
+    page_content: [
+      "Worked through multiple technical and molding challenges to optimize various Easter Egg concepts under constrained timelines - addressed tolerance requirements to meet contrasting requirements such as a leak free fit and easy opening, resin requirements to handle boiling water, and molding challenges.",
+    ],
+  },
 ];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Jello-Mold | Teck-Pac</title>
-	</head>
-	<body>
-		<section id="solutions_jello_page" class="solutions_jello_page">
-			<InfoPage items={content} />
-		</section>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jello-Mold | Teck-Pac</title>
+  </head>
+  <body>
+    <section id="solutions_jello_page" class="solutions_jello_page">
+      <InfoPage items={content} />
+    </section>
+  </body>
 </html>

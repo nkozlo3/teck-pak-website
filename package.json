@@ -12,12 +12,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^7.0.5",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.8",
     "resend": "^6.9.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.27",
+    "netlify-cli": "^24.8.1",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2"
   }
