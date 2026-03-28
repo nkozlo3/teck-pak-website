@@ -1,0 +1,20 @@
+---
+import "../../styles/infoPage.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+	{
+		title: "Kool Aid Launch",
+		page_content: [
+			"We launched bottle for koolaid it was really cool",
+			"Started at nothing and hypothesized very impressivev",
+			"used two already existing bottles",
+			"result?",
+			"Speed to market and minimized captial expenditure baby",
+		],
+	},
+];
+---
+
+<sectio id="solutions_kool-aid_page" class="solutions_kool-aid_page">
+		<InfoPage items={content} />
+</sectio>
