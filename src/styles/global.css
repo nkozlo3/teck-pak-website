@@ -35,7 +35,7 @@ body {
 
 /* ==== Hero Page Image one ==== */
 .navbar_hero_image {
-	background-image: url(/teck-pak-website/hero_section_tempImage_opt1.jpg);
+	background-image: url(/hero_section_tempImage_opt1.jpg);
 	background-size: cover;
 }
 

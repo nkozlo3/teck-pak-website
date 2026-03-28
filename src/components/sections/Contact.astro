@@ -3,26 +3,67 @@ import "../../styles/contact.css";
 ---
 
 <section id="contact" class="contact">
-	<div class="contact_container">
-		<h2 class="base_title about_title">Contact Us</h2>
-		<div class="contact_input_boxes">
-			<input
-				class="contact_input_box"
-				type="text"
-				placeholder="Name"
-				required
-			/>
-			<input
-				class="contact_input_box"
-				type="email"
-				placeholder="Email"
-				required
-			/>
-			<textarea
-				class="contact_input_box contact_message_input_box"
-				placeholder="Message"
-				required></textarea>
-		</div>
-		<button type="submit" class="btn btn--primary contact_btn">Send</button>
-	</div>
+  <div class="contact_container">
+    <h2 class="base_title about_title">Contact Us</h2>
+    <form id="contact-form" class="contact_input_boxes">
+      <input
+        class="contact_input_box"
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+      />
+      <input
+        class="contact_input_box"
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <textarea
+        class="contact_input_box contact_message_input_box"
+        name="message"
+        placeholder="Message"
+        required></textarea>
+      <button type="submit" class="btn btn--primary contact_btn">Send</button>
+    </form>
+  </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      };
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          alert("yata");
+          form.reset();
+        } else {
+          alert(
+            "Message not sent. Please try again or email us at pdecleir@gmail.com",
+          );
+        }
+      } catch (err) {
+        alert("Network error.");
+      }
+    });
+  });
+</script>
