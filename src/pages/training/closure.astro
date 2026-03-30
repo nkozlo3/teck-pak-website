@@ -1,0 +1,26 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "Closures Training Course",
+    page_content: [
+      "The most comprehensive closure training in the industry. The training covers everything from resins, to design, to innovations, to manufacturing for aseptic, hot fill, water, and carbonated, including interesting case studies and lots of different closure examples. The course can be tailored to your specific needs. This training is beneficial to veterans of the industry and those new to caps and closures – including operators, engineers, sales, marketing and closure suppliers. The training is offered as a two- or three-day on-site program or a multiple on-line sessions. Call or request more information.",
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/teck-pac_logo.svg" />
+    <title>Closures Training | Teck-Pac</title>
+  </head>
+  <body>
+    <section id="training_closures_page" class="training_closures_page">
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>

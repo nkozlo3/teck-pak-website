@@ -1,6 +1,31 @@
 ---
 import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
+import FloatingPage from "../components/props/FloatingPage.astro";
+import Contact from "../components/sections/Contact.astro";
+
+const solutions = [
+  {
+    title: "Closures Training Course",
+    description_mobile:
+      "The most comprehensive closure training in the industry. This training is beneficial to veterans of the industry and those new to caps and closures. The training is offered as a two- or three-day on-site program or a multiple on-line sessions.",
+    description:
+      "The most comprehensive closure training in the industry. The training covers everything from resins, to design, to innovations, to manufacturing for aseptic, hot fill, water, and carbonated, including interesting case studies and lots of different closure examples. The course can be tailored to your specific needs. This training is beneficial to veterans of the industry and those new to caps and closures – including operators, engineers, sales, marketing and closure suppliers. The training is offered as a two- or three-day on-site program or a multiple on-line sessions. Call or request more information.",
+    subtitle_alt: "Closure Technology Topics",
+    points: [
+      "History, Requirements, Finish Designs",
+      "Closure Materials",
+      "Equipment, Capping, Defects",
+      "Innovations",
+    ],
+    image: {
+      src: "/teck-pac.png",
+      alt: "Teck-Pac Logo",
+    },
+    image_loading: "eager",
+    button_href: "/training/closure",
+  },
+];
 ---
 
 <html lang="en">
@@ -12,5 +37,9 @@ import Header from "../components/layout/Header.astro";
   </head>
   <body>
     <Header />
+    <div class="floating_page_wrapper">
+      <FloatingPage items={solutions} />
+    </div>
+    <Contact />
   </body>
 </html>
