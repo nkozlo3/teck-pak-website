@@ -164,7 +164,7 @@ body {
 }
 
 .navbar_links a.active_navbar_link {
-	color: var(--color-primary);
+	color: var(--color-accent);
 }
 
 
@@ -431,6 +431,12 @@ body {
 }
 
 
+.info_page_content {
+	margin: 0 auto;
+	max-width: 80ch;
+	width: 100%;
+}
+
 
 .info_page_content p {
 	padding-bottom: 2rem;
@@ -566,6 +572,10 @@ body {
 		text-decoration: none;
 		color: white;
 		text-shadow: var(--text-shadow);
+	}
+
+	.navbar_links a.active_navbar_link {
+	color: var(--color-primary);
 	}
 
 	.deskt-btn {
