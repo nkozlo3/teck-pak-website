@@ -1,0 +1,90 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "What We Teach",
+    page_content: [
+		"The most comprehensive closure training in the industry. The training covers everything from resins, to design, to innovations, to manufacturing for aseptic, hot fill, water, and carbonated, including interesting case studies and lots of different closure examples. The course can be tailored to your specific needs. This training is beneficial to veterans of the industry and those new to caps and closures – including operators, engineers, sales, marketing and closure suppliers. The training is offered as a two- or three-day on-site program or a multiple on-line sessions. Call or request more information.",
+    ],
+	text_block_title: "More Info",
+    page_content_grid: [
+      {
+        title: "Overview",
+        items: [
+          "Comprehensive training across closure design, materials, and manufacturing",
+          "Covers aseptic, hot fill, water, and carbonated systems",
+          "Includes real-world case studies and failure analysis",
+          "Tailored for engineers, operators, and leadership teams",
+          "Available on-site or online (2–3 day formats)",
+        ],
+      },
+      {
+        title: "History, Requirements, Finish Designs",
+        items: [
+          "Beverage closures − Brief History",
+          "Plastic closure performance requirements",
+          "Consumer wants from package",
+          "Bottle Finishes",
+          "Closure types and features",
+          "Closure sealing options − 1 pc and 2 pc",
+          "Closure safety & Tamper Evidence",
+        ],
+      },
+      {
+        title: "Closure Materials",
+        items: [
+          "HDPE",
+          "HDPE Environmental Stress Crack Resistance",
+          "PP",
+          "Slip Agents for closures",
+        ],
+      },
+      {
+        title: "Equipment, Capping, Defects",
+        items: [
+          "Closure manufacturing processes & equipment",
+          "Injection Molding",
+          "Compression Molding",
+        ],
+      },
+      {
+        title: "Innovations",
+        items: [
+          "Ingredient release / Dosing closures",
+          "Closure Innovations",
+          "Tethered Closures",
+          "Lightweighting",
+          "PET",
+        ],
+      },
+      {
+        title: "Other",
+        items: [
+          "Closures for cold aseptic filling and hot filling",
+          "Capping",
+          "Application Angle",
+          "Torque test equipment",
+          "Removal Torque testing",
+          "Common closure and application defects",
+          "Checklist for new plastic closure design",
+        ],
+      },
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/teck-pac_logo.svg" />
+    <title>Closures Training | Teck-Pac</title>
+  </head>
+  <body>
+    <section id="training_closures_page" class="training_closures_page">
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>
