@@ -1,0 +1,28 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "Taste & Odor Issues with Kettle Case Study",
+    page_content: [
+      "Worked with an off-shore supplier to audit their production facilities and upstream suppliers of colorants, silicone resins and polypropylenes to address taste and odor issues in a multi-material, multi-component kettle. Made recommendations to improve the quality practices materials storage and molding processes. Quality control measures included the implementation of a odor test to identify and control the sources. Result: odors eliminated",
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cracked-Closures Case-Study | Teck-Pac</title>
+  </head>
+  <body>
+    <section
+      id="caseStudy_cracked-closures_page"
+      class="caseStudy_cracked-closures_page"
+    >
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>

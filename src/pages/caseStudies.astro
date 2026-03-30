@@ -1,6 +1,114 @@
 ---
 import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
+import FloatingPage from "../components/props/FloatingPage.astro";
+import Contact from "../components/sections/Contact.astro";
+
+const solutions = [
+  {
+    title: "Carbonated Beverages, Soft Bottles",
+    description_mobile:
+      "Client reached out about taste and soft bottles. Initial investigation showed loss of carbonation over time. A deeper investigation showed defects at the top of the finish of the bottle causing ripples in the plug seal. The source of the preform defects was identified and corrected.",
+    description:
+      "Client reached out about taste and soft bottles. Initial investigation showed that filling carbonation levels and torques were in specification yet over time there was a loss in carbonation as indicated by soft bottles. A deeper dive showed defects at the top of finish of the bottle. Further analysis showed that the preform defects were causing ripples in the plug seal. The source of the preform defects was identified and corrected.",
+    subtitle_alt: "Overview",
+    points: [
+      "Customers calling client about taste and soft bottles",
+      "Conducted a thorough investigation",
+      "Investigation showed burrs or ripples on the plug seal",
+      "Source of the preform defects identified and corrected",
+      "Happy ending, happy customers!",
+    ],
+    image: {
+      src: "/soft_bottles_case-study.png",
+      alt: "Deformed top of a soft bottle",
+    },
+    image_loading: "eager",
+    button_href: "/caseStudies/soft-bottles",
+  },
+  {
+    title: "Carbonated Beverages, Cracked Closures",
+    description_mobile:
+      "Client was experiencing severe cracking in closures leading to a high level of returns. The problem was occurring in many different products. Our investigation identified the root cause and fixed the issue in a timely manner.",
+    description:
+      "Client was experiencing severe cracking in closures in customers stores leading to a high level of returns. The problem was occurring in many different products from juices to sports drinks to iced teas and was a recent occurrence. TeckPack conducted an investigation including a deep assessment of what changed. Our investigation identified the root cause and fixed the issue in a timely manner.",
+    subtitle_alt: "Overview",
+    points: [
+      "Severe cracking in closures, high level of returns",
+      "Conducted a thorough investigation including a deep assessment",
+      "Investigation identified the major root cause",
+      "Source of the issue identified and corrected",
+    ],
+    image: {
+      src: "/cracked_closures_case-study.png",
+      alt: "Cracked bottle cap on a bottle",
+    },
+    image_loading: "eager",
+    button_href: "/caseStudies/cracked-closures",
+  },
+  {
+    title: "Taste & Odor Issue In Electric Water Kettle",
+    description_mobile:
+      "Worked with an off-shore supplier to audit their production facilities and suppliers to address taste and odor issues in a kettle. Made recommendations to improve the quality practices, storeage, and molding processes. Resulted in odors eliminated.",
+    description:
+      "Worked with an off-shore supplier to audit their production facilities and upstream suppliers of colorants, silicone resins and polypropylenes to address taste and odor issues in a multi-material, multi-component kettle. Made recommendations to improve the quality practices materials storage and molding processes. Quality control measures included the implementation of a odor test to identify and control the sources. Result: odors eliminated.",
+    subtitle_alt: "Overview",
+    points: [
+      "Taste & Odor Issues in Electric Water Kettle",
+      "Worked with an off-shore supplier",
+      "Conducted an audit of production facilities and upstream suppliers",
+      "Made recommendations to improve the quality practices, materials storage, and molding process",
+      "Quality controlmeasures included the implementation of an odor test to identify and control the sources",
+      "Result: odors eliminated",
+    ],
+    image: {
+      src: "/odor_kettle_case-study.png",
+      alt: "A disassembled kettle",
+    },
+    image_loading: "lazy",
+    button_href: "/caseStudies/kettle",
+  },
+  {
+    title: "Design and Launch of a new, improved K-Cup",
+    description_mobile:
+      "Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a “quick” production filler for regional launch, while commercial line was being produced.",
+    description:
+      "Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a “quick” production filler for regional launch, while commercial line was being produced.",
+    subtitle_alt: "Overview",
+    points: [
+      "Developed a New Coffee Pod",
+      "Improved filtration mechanism",
+      "Identified additional equipment supplier",
+      "Coffee!!",
+    ],
+    image: {
+      src: "/coffee_pod.png",
+      alt: "Coffee pod packaging and coffee pods",
+    },
+    image_loading: "lazy",
+    button_href: "/solutions/coffee-pods",
+  },
+  {
+    title: "Design and Launch of a new, improved K-Cup",
+    description_mobile:
+      "Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a “quick” production filler for regional launch, while commercial line was being produced.",
+    description:
+      "Developed a New Coffee Pod with an improved filtration mechanism. Identified a new equipment supplier to develop a “quick” production filler for regional launch, while commercial line was being produced.",
+    subtitle_alt: "Overview",
+    points: [
+      "Developed a New Coffee Pod",
+      "Improved filtration mechanism",
+      "Identified additional equipment supplier",
+      "Coffee!!",
+    ],
+    image: {
+      src: "/coffee_pod.png",
+      alt: "Coffee pod packaging and coffee pods",
+    },
+    image_loading: "lazy",
+    button_href: "/solutions/coffee-pods",
+  },
+];
 ---
 
 <html lang="en">
@@ -11,5 +119,9 @@ import Header from "../components/layout/Header.astro";
   </head>
   <body>
     <Header />
+    <div class="floating_page_wrapper">
+      <FloatingPage items={solutions} />
+    </div>
+    <Contact />
   </body>
 </html>

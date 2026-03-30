@@ -1,5 +1,12 @@
 ---
+const { pathname } = Astro.url;
 
+const navLinks = [
+  { name: "Solutions", href: "/solutions" },
+  { name: "Case Studies", href: "/caseStudies" },
+  { name: "Training", href: "/training" },
+  { name: "Resources", href: "/resources" },
+];
 ---
 
 <header class="navbar">
@@ -22,18 +29,25 @@
     <!-- Navigation Links -->
     <nav id="navbar-links" class="navbar_links">
       <ul>
-        <li>
-          <a href="/solutions" class="navbar_link">Solutions</a>
-        </li>
-        <li>
-          <a href="/caseStudies" class="navbar_link">Case Studies</a>
-        </li>
-        <li>
-          <a href="/training" class="navbar_link">Training</a>
-        </li>
-        <li>
-          <a href="/resources" class="navbar_link">Resources</a>
-        </li>
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "navbar_link",
+                  {
+                    active_navbar_link:
+                      pathname === link.href ||
+                      (link.href !== "/" && pathname.startsWith(link.href)),
+                  },
+                ]}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
         <li>
           <a href="/#about" class="navbar_link">About</a>
         </li>

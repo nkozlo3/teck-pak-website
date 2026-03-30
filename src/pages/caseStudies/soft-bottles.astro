@@ -1,0 +1,31 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "Soft Bottles Case Study",
+    page_content: [
+      "Client reached out to complain that customers were calling about taste and soft bottles. Initial investigation showed that filling carbonation levels and torques were in specification yet over time there was a loss in carbonation as indicated by soft bottles.",
+      "TeckPac conducted a thorough investigation including dimensional evaluations or preforms and closures for fit, measurement of application angle and microscopic inspection of the finish and closure.",
+      "The investigation showed burrs or ripples on the plug seal. A deeper dive showed defects at the top of finish of the bottle. Further analysis showed that the preform defects were causing ripples in the plug seal.",
+      "The source of the preform defects was identified and corrected and an enhanced inspection regime was initiated to eliminate the cause. Happy ending, Happy customers!",
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Soft-Bottles Case-Study | Teck-Pac</title>
+  </head>
+  <body>
+    <section
+      id="caseStudy_soft-bottles_page"
+      class="caseStudy_soft-bottles_page"
+    >
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>

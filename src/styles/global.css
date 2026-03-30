@@ -163,6 +163,10 @@ body {
 	color: var(--color-secondary);
 }
 
+.navbar_links a.active_navbar_link {
+	color: var(--color-primary);
+}
+
 
 /* ==== Base Container ==== */
 .hero_container {
@@ -377,6 +381,7 @@ body {
 }
 
 .info_page_header {
+	padding-right: 1rem;
 	position: relative;
 	display: flex;
 	align-items: center;

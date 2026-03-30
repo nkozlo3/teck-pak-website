@@ -1,0 +1,30 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "Cracked Closures Case Study",
+    page_content: [
+      "TeckPac learned that client was experiencing  severe cracking in closures in customers stores leading to a high level of returns. The problem was occurring in many different products from juices to sports drinks to iced teas and was a recent occurrence.",
+      "TeckPack conducted an investigation including a deep assessment of what changed. Investigation included Injection Molding Parameters, Capping Torques, Part Design to identify stress points and sharp angles, Environmental Stress Crack (ESCR) assessment, and Resin grade and changes.",
+      "The assessment showed that multiple attributes were driving the cause. However, one overpowering change was identified and was enough to overshadow all the other limitations and fix the issue in a timely manner.",
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cracked-Closures Case-Study | Teck-Pac</title>
+  </head>
+  <body>
+    <section
+      id="caseStudy_cracked-closures_page"
+      class="caseStudy_cracked-closures_page"
+    >
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>
