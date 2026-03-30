@@ -1,0 +1,25 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "Leakers in Cups & Tubs",
+    page_content: [
+      "Leakers are an ever present issue with cups and tubs. But they don’t need to be. TeckPac has worked on many different seal leaker issues on thermoformed and injection molded cups and tubs. The fix can often be redesign of the heater head, heater head material composition, elimination of contamination, a unique change to the carrier plate design in the filler, and many others. TeckPack has worked and fixed many such leakers. Tell us your challenge and see the solution.",
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Leakers Case-Study | Teck-Pac</title>
+  </head>
+  <body>
+    <section id="caseStudy_leakers_page" class="caseStudy_leakers_page">
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>

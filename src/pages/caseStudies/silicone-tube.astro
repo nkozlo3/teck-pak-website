@@ -1,0 +1,29 @@
+---
+import "../../styles/global.css";
+import InfoPage from "../../components/props/InfoPage.astro";
+const content = [
+  {
+    title: "Silicone Tube & Spout Case Study",
+    page_content: [
+      "The manufacture of silicone components is often considered by suppliers to be an art rather than a science. This is not always the case. TeckPack used their knowledge of polymer compositions to convince converter to increase catalyst percent in a silicone tubing and reduce the tube length to eliminate kinking in a peristaltic pump.",
+      "TeckPac recommended to repositioned the gate on HDPE injection molded valve and changed the resin grade to eliminate stress cracking. The changes were implemented and eliminated cracks and kinked tubes!",
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cracked-Closures Case-Study | Teck-Pac</title>
+  </head>
+  <body>
+    <section
+      id="caseStudy_cracked-closures_page"
+      class="caseStudy_cracked-closures_page"
+    >
+      <InfoPage items={content} />
+    </section>
+  </body>
+</html>
