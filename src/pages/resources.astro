@@ -1,6 +1,68 @@
 ---
 import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
+import Contact from "../components/sections/Contact.astro";
+
+const links_bucket = [
+  {
+    title: "Industry Publications",
+    links: [
+      { name: "Packaging World", url: "http://www.packworld.com/" },
+      { name: "Packaging Digest", url: "http://www.packagingdigest.com/" },
+      {
+        name: "Food & Beverage Packaging",
+        url: "http://www.foodandbeveragepackaging.com/",
+      },
+      { name: "UK Packaging News", url: "http://www.packagingnews.co.uk/" },
+      { name: "Packaging Design", url: "http://www.packagedesignmag.com/" },
+      { name: "EU Packaging News", url: "http://www.packagingeurope.com/" },
+      { name: "Flexible Packaging", url: "http://www.flexpackmag.com/" },
+      { name: "Brand Packaging", url: "http://www.brandpackaging.com/" },
+      {
+        name: "Canadian Packaging News",
+        url: "http://www.canadianpackaging.com/",
+      },
+      {
+        name: "Healthcare Packaging",
+        url: "http://www.healthcarepackaging.com/",
+      },
+      { name: "Packaging Machinery", url: "http://www.pmtdirect.com/" },
+      { name: "Packaging Strategies", url: "http://www.packstrat.com/" },
+      {
+        name: "Plastics In Packaging",
+        url: "http://www.plasticsinpackaging.com/",
+      },
+    ],
+  },
+  {
+    title: "Industry Associations",
+    links: [
+      { name: "IOPP", url: "http://www.iopp.org/" },
+      { name: "Society of Plastics Engineers", url: "http://www.4spc.com/" },
+      { name: "TAPPI", url: "http://www.tappi.org/" },
+      { name: "ASTM", url: "http://www.astm.org/" },
+      { name: "ISTA", url: "http://www.ista.org/" },
+      { name: "SPI", url: "http://www.plasticsindustry.org/" },
+    ],
+  },
+  {
+    title: "Industry References",
+    links: [
+      {
+        name: "Finish Standards",
+        url: "http://www.gpi.org/industry-resources/finish-drawings",
+      },
+      {
+        name: "Recycle Symbols",
+        url: "http://www.plasticsindustry.org/AboutPlastics/content.cfm?ItemNumber=823&navItemNumber=2144",
+      },
+      {
+        name: "Corrugated Standards",
+        url: "http://www.corrugated.org/upload/CommonFootprint_TechnicalSpecifications.pdf",
+      },
+    ],
+  },
+];
 ---
 
 <html lang="en">
@@ -12,5 +74,22 @@ import Header from "../components/layout/Header.astro";
   </head>
   <body>
     <Header />
+    <div class="links_container">
+      {
+        links_bucket.map((link_list) => (
+          <div class="link_list_container">
+            <h3 class="link_title">{link_list.title}</h3>
+            <ul>
+              {link_list.links.map((link) => (
+                <li>
+                  <a href={link.url}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <Contact />
   </body>
 </html>
