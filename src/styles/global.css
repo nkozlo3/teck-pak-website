@@ -101,7 +101,8 @@ body {
 .hamburger {
 	width: 24px;
 	height: 2px;
-	background: var(--color-primary);
+	background: var(--color-secondary);
+	text-shadow: var(--text-shadow);
 	/*Elements rely on this. If .hamburger stops being relative layout will break*/
 	position: relative;
 	display: block;
@@ -115,7 +116,8 @@ body {
 	left: 0;
 	width: 24px;
 	height: 2px;
-	background: var(--color-primary);
+	background: var(--color-secondary);
+	text-shadow: var(--text-shadow);
 	transition: all 0.3s ease;
 }
 
@@ -165,6 +167,10 @@ body {
 }
 
 .navbar_links a.active_navbar_link {
+	color: var(--color-accent);
+}
+
+.navbar_links a.active_navbar_home_link {
 	color: var(--color-accent);
 }
 
