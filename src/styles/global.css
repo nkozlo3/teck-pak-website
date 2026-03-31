@@ -20,6 +20,7 @@ body {
 	--color-text-default: white;
 	--color-text-secondary: #1f2937;
 	--color-muted: oklch(90.983% 0.00433 15.923);
+	--color-link: #4b5563;
 
 	--font-size-xl: clamp(1.5rem, 8vw, 3rem);
 	--font-size-lg: clamp(0.75rem, 2.5vw, 2rem);
@@ -100,7 +101,8 @@ body {
 .hamburger {
 	width: 24px;
 	height: 2px;
-	background: var(--color-primary);
+	background: var(--color-secondary);
+	text-shadow: var(--text-shadow);
 	/*Elements rely on this. If .hamburger stops being relative layout will break*/
 	position: relative;
 	display: block;
@@ -114,7 +116,8 @@ body {
 	left: 0;
 	width: 24px;
 	height: 2px;
-	background: var(--color-primary);
+	background: var(--color-secondary);
+	text-shadow: var(--text-shadow);
 	transition: all 0.3s ease;
 }
 
@@ -164,6 +167,10 @@ body {
 }
 
 .navbar_links a.active_navbar_link {
+	color: var(--color-accent);
+}
+
+.navbar_links a.active_navbar_home_link {
 	color: var(--color-accent);
 }
 
@@ -537,6 +544,66 @@ body {
 	display: none;
 }
 
+
+/* ======================================================== resources.css ======================================================== */
+.links_container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	margin-top: 9rem;
+	gap: 2.5rem;
+	margin-inline: auto;
+	padding: 0 1.5rem;
+}
+
+.link_list_container {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	border-radius: 1rem;
+	padding: 2rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link_list_container:hover {
+	transform: translate(-4px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.link_title {
+	margin-top: 0;
+	margin-bottom: 1.25rem;
+	font-size: 1.25rem;
+	color: var(--color-primary);
+	border-bottom: 2px solid var(--color-muted);
+}
+
+.link_list_container ul {
+	margin: 0;
+	padding: 0;
+}
+
+.link_list_container li {
+	list-style: none;
+	padding-bottom: 0.3rem;
+}
+
+.link_list_container a {
+	display: inline-block;
+	padding: 0.3rem;
+	text-decoration: none;
+	color: var(--color-link);
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.link_list_container a:hover {
+	background-color: var(--color-muted);
+	color: var(--color-accent);
+	transform: translateX(4px);
+}
+
 /* ==== non-mobile, non-tablet ==== */
 @media (min-width: 804px) {
 	.navbar_container {
@@ -659,5 +726,8 @@ body {
 	.floating_page_secondary li {
 		display: flex;
 		align-items: flex-start;
+	}
+	.links_container {
+	width: clamp(80ch, 70vw, 180ch);
 	}
 }

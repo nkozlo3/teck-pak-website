@@ -49,10 +49,12 @@ const navLinks = [
           ))
         }
         <li>
-          <a href="/#about" class="navbar_link">About</a>
+          <a id="navbar-about" href="/#about" class="navbar_link">About</a>
         </li>
         <li>
-          <a href="#contact" class="navbar_link deskt-btn">Contact Us</a>
+          <a id="navbar-contact" href="#contact" class="navbar_link deskt-btn"
+            >Contact Us</a
+          >
         </li>
       </ul>
     </nav>
@@ -62,10 +64,30 @@ const navLinks = [
 <script>
   const toggle = document.getElementById("navbar-toggle");
   const menu = document.getElementById("navbar-links");
+  const about = document.getElementById("navbar-about");
+  const contact = document.getElementById("navbar-contact");
 
   toggle?.addEventListener("click", () => {
     const isOpen = menu?.classList.toggle("open");
     toggle.classList.toggle("open");
     toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  about?.addEventListener("click", () => {
+    const alrOpen = menu?.classList.contains("open");
+    if (alrOpen) {
+      const isOpen = menu?.classList.toggle("open");
+      toggle?.classList.toggle("open");
+      toggle?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+  });
+
+  contact?.addEventListener("click", () => {
+    const alrOpen = menu?.classList.contains("open");
+    if (alrOpen) {
+      const isOpen = menu?.classList.toggle("open");
+      toggle?.classList.toggle("open");
+      toggle?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
   });
 </script>
