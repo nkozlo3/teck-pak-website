@@ -99,6 +99,3 @@ Available formats:
 - **Hosting:** (Netlify)
 - **Email Handling:** API-based (Resend)
 
----
-
-## 📁 Project Structure
