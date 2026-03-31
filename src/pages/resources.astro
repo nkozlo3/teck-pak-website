@@ -82,7 +82,9 @@ const links_bucket = [
             <ul>
               {link_list.links.map((link) => (
                 <li>
-                  <a href={link.url}>{link.name}</a>
+                  <a target="_blank" href={link.url}>
+                    {link.name}
+                  </a>
                 </li>
               ))}
             </ul>
