@@ -47,7 +47,7 @@
 	position: relative;
 }
 
-.floating_page_points li::before {
+.checkmarked_points li::before {
 	content: "\2713";
 	color: var(--color-accent);
 	font-size: 1.4em;

@@ -24,9 +24,9 @@ interface InfoPageItem {
           {item.page_content_grid &&
             item.page_content_grid.map((grid) => (
               <h3 class="info_page_content_subtitle">{grid.title}</h3>
-			  <ul>
+			  <ul class="info_page_ul checkmarked_points">
 				{grid.items.map((bullet) => (
-					<li class="info_page_content_bullet">{bullet}</li>
+					<li class="checkmarked_points_item info_page_content_bullet">{bullet}</li>
 				))}
 			  </ul>
            ))}
