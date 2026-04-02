@@ -25,7 +25,11 @@ import "../../styles/global.css";
         name="message"
         placeholder="Message"
         required></textarea>
-      <button type="submit" class="btn btn--primary contact_btn">Send</button>
+      <button
+        id="submit-button"
+        type="submit"
+        class="btn btn--primary contact_btn">Send</button
+      >
     </form>
   </div>
 </section>
@@ -44,6 +48,7 @@ import "../../styles/global.css";
         message: formData.get("message"),
       };
 
+      const button = document.getElementById("submit-button");
       try {
         const res = await fetch("/api/contact", {
           method: "POST",
@@ -55,13 +60,22 @@ import "../../styles/global.css";
 
         if (res.ok) {
           form.reset();
+          if (button) {
+            button.textContent = "\u2714";
+
+            setTimeout(() => {
+              button.textContent = "Send";
+            }, 3000);
+          }
         } else {
           alert(
-            "Message not sent. Please try again or email us at pdecleir@TeckPac.com",
+            "Message not sent. Please try again or email us at pdecleir@teckpac.com",
           );
         }
       } catch (err) {
-        alert("Network error.");
+        alert(
+          "Network error. Please try again or email us at pdecleir@teckpac.com",
+        );
       }
     });
   });
