@@ -1,14 +1,14 @@
-# TeckPac Consulting Website
+# TeckPac LC Consulting Website
 
-A modern, responsive website for TeckPac — a technical consulting firm specializing in food and beverage packaging solutions.
+A modern, responsive website for TeckPac LC — a technical consulting firm specializing in food and beverage packaging solutions.
 
-This site showcases TeckPac’s expertise in closures, bottles, materials, and packaging systems, along with real-world case studies, training offerings, and consulting services.
+This site showcases TeckPac LC’s expertise in closures, bottles, materials, and packaging systems, along with real-world case studies, training offerings, and consulting services.
 
 ---
 
 ## 🚀 Overview
 
-TeckPac provides hands-on technical consulting across the full packaging lifecycle — from concept to commercialization to troubleshooting in-market failures.
+TeckPac LC provides hands-on technical consulting across the full packaging lifecycle — from concept to commercialization to troubleshooting in-market failures.
 
 This website is designed to:
 
@@ -74,7 +74,7 @@ This website is designed to:
 
 ## 🎓 Training Program
 
-TeckPac offers one of the most comprehensive closure training programs in the industry.
+TeckPac LC offers one of the most comprehensive closure training programs in the industry.
 
 Topics include:
 
