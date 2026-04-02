@@ -38,7 +38,7 @@ const links_bucket = [
     title: "Industry Associations",
     links: [
       { name: "IOPP", url: "http://www.iopp.org/" },
-      { name: "Society of Plastics Engineers", url: "http://www.4spc.com/" },
+      { name: "Society of Plastics Engineers", url: "http://www.4spc.org/" },
       { name: "TAPPI", url: "http://www.tappi.org/" },
       { name: "ASTM", url: "http://www.astm.org/" },
       { name: "ISTA", url: "http://www.ista.org/" },
@@ -70,7 +70,7 @@ const links_bucket = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/teck-pac_logo.svg" />
-    <title>Resources | Teck-Pac</title>
+    <title>Resources | Teck-Pac LC</title>
   </head>
   <body>
     <Header />
@@ -82,7 +82,9 @@ const links_bucket = [
             <ul>
               {link_list.links.map((link) => (
                 <li>
-                  <a href={link.url}>{link.name}</a>
+                  <a target="_blank" href={link.url}>
+                    {link.name}
+                  </a>
                 </li>
               ))}
             </ul>
