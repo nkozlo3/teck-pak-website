@@ -7,7 +7,20 @@ const resend = new Resend(RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.json();
-  const { name, email, message } = data;
+  const { name, email, message, honey, confirm_email } = data;
+  if (honey) {
+    return new Response(JSON.stringify({ error: "Spam Detected" }), {
+      status: 400,
+    });
+  }
+
+  const EXPECTED_CAPTCHA_ = "TECKPAC_VERIFIED_2026";
+
+  if (confirm_email !== EXPECTED_CAPTCHA_) {
+    return new Response(JSON.stringify({ error: "Spam Detected" }), {
+      status: 400,
+    });
+  }
 
   if (!name || !email || !message) {
     return new Response(JSON.stringify({ error: "Missing Fields" }), {
@@ -25,8 +38,7 @@ export const POST: APIRoute = async ({ request }) => {
 			<h3>New Message</h3>
 				<p><strong>Name:</strong> ${name}</p>
 				<p><strong>Email:</strong> ${email}</p>
-				<p><strong>Message:</strong><br/>${message}</p>
-		`,
+				<div style="white-space: pre-wrap; font-family: sans-serif;">${message}</div>`,
     });
     return new Response(JSON.stringify({ success: true }), {
       status: 200,

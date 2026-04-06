@@ -7,6 +7,22 @@ import "../../styles/global.css";
     <h2 class="base_title about_title">Contact Us</h2>
     <form id="contact-form" class="contact_input_boxes">
       <input
+        type="text"
+        name="_honey"
+        class="honeys"
+        autocomplete="off"
+        tabindex="-1"
+      />
+      <input
+        type="text"
+        name="confirm_email"
+        id="confirm_email"
+        class="confirm_email"
+        autocomplete="off"
+        tabindex="-1"
+        required
+      />
+      <input
         class="contact_input_box"
         type="text"
         name="name"
@@ -35,7 +51,15 @@ import "../../styles/global.css";
 </section>
 
 <script>
+  const CAPTCHA_ = "TECKPAC_VERIFIED_2026";
   document.addEventListener("DOMContentLoaded", () => {
+    const confirm_email = document.getElementById(
+      "confirm_email",
+    ) as HTMLInputElement;
+    if (confirm_email) {
+      confirm_email.value = CAPTCHA_;
+    }
+
     const form = document.getElementById("contact-form") as HTMLFormElement;
     form?.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -46,6 +70,8 @@ import "../../styles/global.css";
         name: formData.get("name"),
         email: formData.get("email"),
         message: formData.get("message"),
+        honey: formData.get("_honey"),
+        confirm_email: formData.get("confirm_email"),
       };
 
       const button = document.getElementById("submit-button");
