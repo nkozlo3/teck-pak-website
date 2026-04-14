@@ -10,15 +10,15 @@ export const POST: APIRoute = async ({ request }) => {
   const { name, email, message, honey, confirm_email } = data;
   if (honey) {
     return new Response(JSON.stringify({ error: "Spam Detected" }), {
-      status: 400,
+      status: 422,
     });
   }
 
-  const EXPECTED_CAPTCHA_ = "TECKPAC_VERIFIED_2026";
+  const EXPECTED_CAPTCHA_ = "TECKPAC_VERIFIED_2026@email.com";
 
   if (confirm_email !== EXPECTED_CAPTCHA_) {
     return new Response(JSON.stringify({ error: "Spam Detected" }), {
-      status: 400,
+      status: 422,
     });
   }
 
