@@ -57,9 +57,7 @@ import "../../styles/global.css";
       "confirm_email",
     ) as HTMLInputElement;
     if (confirm_email) {
-      setTimeout(() => {
-        confirm_email.value = CAPTCHA_;
-      }, 3000);
+      confirm_email.value = CAPTCHA_;
     }
 
     const form = document.getElementById("contact-form") as HTMLFormElement;
