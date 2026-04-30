@@ -8,19 +8,10 @@ import "../../styles/global.css";
     <form id="contact-form" class="contact_input_boxes">
       <input
         type="text"
-        name="_honey"
-        class="honeys"
+        name="phone_number"
+        class="_phone_number"
         autocomplete="off"
         tabindex="-1"
-      />
-      <input
-        type="text"
-        name="confirm_email"
-        id="confirm_email"
-        class="confirm_email"
-        autocomplete="off"
-        tabindex="-1"
-        required
       />
       <input
         class="contact_input_box"
@@ -34,6 +25,15 @@ import "../../styles/global.css";
         type="email"
         name="email"
         placeholder="Email"
+        required
+      />
+      <input
+        type="email"
+        name="confirm_email"
+        id="confirm_email"
+        class="confirm_email"
+        autocomplete="off"
+        tabindex="-1"
         required
       />
       <textarea
@@ -51,7 +51,7 @@ import "../../styles/global.css";
 </section>
 
 <script>
-  const CAPTCHA_ = "TECKPAC_VERIFIED_2026";
+  const CAPTCHA_ = "TECKPAC_VERIFIED_2026@email.com";
   document.addEventListener("DOMContentLoaded", () => {
     const confirm_email = document.getElementById(
       "confirm_email",
@@ -70,7 +70,7 @@ import "../../styles/global.css";
         name: formData.get("name"),
         email: formData.get("email"),
         message: formData.get("message"),
-        honey: formData.get("_honey"),
+        honey: formData.get("phone_number"),
         confirm_email: formData.get("confirm_email"),
       };
 
@@ -91,8 +91,12 @@ import "../../styles/global.css";
 
             setTimeout(() => {
               button.textContent = "Send";
+              confirm_email.value = CAPTCHA_;
             }, 3000);
           }
+        } else if (res.status === 422) {
+          form.reset();
+          alert("Thank you for your submission.");
         } else {
           alert(
             "Message not sent. Please try again or email us at pdecleir@teckpac.com",
